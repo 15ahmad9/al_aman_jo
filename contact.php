@@ -20,7 +20,7 @@ require_once 'includes/navbar.php';
     <h2 class="section-title">تواصل معنا</h2>
     <?php if ($success): ?><div class="alert success">تم إرسال الرسالة بنجاح</div><?php endif; ?>
     <div class="contact-grid">
-        <div class="card"><h3>معلومات الشركة</h3><p>الإيميل: info@company.com</p><p>الهاتف: 0790000000</p></div>
+        <div class="card"><h3>معلومات الشركة</h3><p>الإيميل: israatemp@gmail.com</p><p>الهاتف: 065538450</p><p>رقم موبايل: 0777666294</p></div>
         <form class="card" method="POST">
             <input class="form-control" type="text" name="name" placeholder="الاسم" required>
             <input class="form-control" type="email" name="email" placeholder="الإيميل" required>

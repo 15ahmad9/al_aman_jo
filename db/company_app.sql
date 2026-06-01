@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2026 at 07:11 PM
+-- Generation Time: May 31, 2026 at 09:40 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -77,15 +77,23 @@ CREATE TABLE `team_members` (
   `name` varchar(120) NOT NULL,
   `position` varchar(120) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `member_type` enum('board','executive') NOT NULL DEFAULT 'board'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `team_members`
 --
 
-INSERT INTO `team_members` (`id`, `name`, `position`, `image`, `created_at`) VALUES
-(1, 'أحمد محمد', 'المدير العام', NULL, '2026-05-30 15:22:25');
+INSERT INTO `team_members` (`id`, `name`, `position`, `image`, `created_at`, `member_type`) VALUES
+(1, 'نبيل محمد عبد الرحمن مزق', 'القائم بأعمال الرئيس التنفيذي', 'img_6a1c85e84bf1a4.93714515.png', '2026-05-30 15:22:25', 'executive'),
+(8, 'محمد يوسف حسن غانم', 'المراقب المالي', 'img_6a1c85e0f076e8.10999139.png', '2026-05-31 18:59:20', 'executive'),
+(9, 'محمد عبد الرحيم ازمقنا', 'مدير الشؤون الإدارية والقانونية', 'img_6a1c85d82aefc2.01849755.png', '2026-05-31 18:59:30', 'executive'),
+(10, 'الأستاذ محمد أحمد موسى العزب', 'رئيس مجلس الإدارة', 'img_6a1c85d0472123.63263002.png', '2026-05-31 18:59:44', 'board'),
+(11, 'الدكتور فاروق محمد مراد مراد', 'نائب رئيس مجلس الإدارة', 'img_6a1c85c86fe1b9.31005103.png', '2026-05-31 18:59:57', 'board'),
+(13, 'الأستاذ كفاح أحمد مصطفى المحارمة', 'عضو مجلس الإدارة', 'img_6a1c85c097ba62.39309046.png', '2026-05-31 19:00:29', 'board'),
+(14, 'الأستاذ سعيد محمد حسن المسعود', 'عضو مجلس الادارة', 'img_6a1c85b975e843.94800366.png', '2026-05-31 19:00:41', 'board'),
+(15, 'جامعة آل البيت ويمثلها الدكتور أسامه خالد إبراهيم نصير', 'عضو مجلس الادارة', 'img_6a1c85a4e09169.04788074.png', '2026-05-31 19:01:00', 'board');
 
 -- --------------------------------------------------------
 
@@ -159,7 +167,7 @@ ALTER TABLE `contact_messages`
 -- AUTO_INCREMENT for table `team_members`
 --
 ALTER TABLE `team_members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`

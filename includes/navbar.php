@@ -1,5 +1,9 @@
 <nav class="navbar">
-    <div class="logo"><a href="index.php">Company Logo</a></div>
+<div class="logo">
+    <a href="index.php">
+        <img src="assets/images/logo.png" alt="Company Logo">
+    </a>
+</div>
         <div class="menu-toggle" id="menuToggle">
         ☰
     </div>

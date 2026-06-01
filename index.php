@@ -3,8 +3,8 @@ require_once 'config/db.php';
 require_once 'includes/header.php';
 require_once 'includes/navbar.php';
 $announcements = $pdo->query("SELECT * FROM announcements ORDER BY id DESC LIMIT 3")->fetchAll();
-$members = $pdo->query("SELECT * FROM team_members ORDER BY id DESC")->fetchAll();
-?>
+$boardMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 'board' ORDER BY id DESC")->fetchAll();
+$executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 'executive' ORDER BY id DESC")->fetchAll();?>
 <section class="hero">
     <h1>مرحباً بكم في شركتنا</h1>
     <p>نقدم حلولاً احترافية وخدمات مميزة تساعدكم على تحقيق أهدافكم.</p>
@@ -12,12 +12,38 @@ $members = $pdo->query("SELECT * FROM team_members ORDER BY id DESC")->fetchAll(
 </section>
 <section id="about" class="section">
     <h2 class="section-title">عن الشركة</h2>
+
     <div class="about-grid">
         <div>
-            <p>نحن شركة متخصصة في تقديم خدمات عالية الجودة، نعمل على تطوير حلول عملية ومبتكرة تناسب احتياجات عملائنا.</p>
-            <p>هدفنا بناء علاقة ثقة طويلة الأمد مع العملاء من خلال الاحترافية والالتزام والدقة في التنفيذ.</p>
+            <p>
+                تأسست شركة دار الأمان للإستثمار بتاريخ 20 نيسان 2008
+                كشركة مساهمة عامة محدودة في سجل الشركات المساهمة العامة
+                تحت الرقم (451) برأسمال (5,000,000) مليون دينار.
+            </p>
+
+            <p>
+                تهدف شركة دار الأمان إلى تحقيق الغايات المنصوص عليها في عقد
+                تأسيسها ونظامها الأساسي، ومن أهمها:
+            </p>
+
+            <ul class="about-list">
+                <li>أنشطة تطوير الأراضي المملوكة ملكية خاصة دون التشييد.</li>
+                <li>تأجير وإدارة المحلات والمجمعات التجارية المملوكة ملكية خاصة.</li>
+                <li>شراء وبيع العقارات الخاصة.</li>
+                <li>أنشطة شركات الإستثمار المشترك.</li>
+                <li>خدمات الدراسات الإكتوارية.</li>
+                <li>دراسات وأبحاث السوق.</li>
+                <li>صناديق وحدات الإستثمار الإئتمانية والإتحادات الإحتكارية أو التركات أو حسابات الوكالات.</li>
+                <li>أنشطة صناديق الإستثمار المشترك.</li>
+                <li>أنشطة خدمات التسويق.</li>
+            </ul>
         </div>
-        <div class="about-logo">شعار الشركة</div>
+
+        <div class="about-logo">
+            <img src="assets/images/logo.png"   style="
+    border-radius: 15px;
+" alt="شعار شركة دار الأمان للإستثمار">
+        </div>
     </div>
 </section>
 <section class="section">
@@ -38,24 +64,52 @@ $members = $pdo->query("SELECT * FROM team_members ORDER BY id DESC")->fetchAll(
 </section>
 <section id="team" class="section">
     <h2 class="section-title">أعضاء الشركة</h2>
+
+    <h3 class="sub-section-title" style="
+    margin: 15px 0;" >أعضاء مجلس الإدارة</h3>
     <div class="cards">
-        <?php foreach ($members as $member): ?>
+        <?php foreach ($boardMembers as $member): ?>
             <div class="card">
-                <?php if ($member['image']): ?><img src="uploads/team/<?= e($member['image']) ?>" alt=""><?php else: ?><div class="placeholder-img">صورة العضو</div><?php endif; ?>
+                <?php if ($member['image']): ?>
+                    <img src="uploads/team/<?= e($member['image']) ?>" alt="">
+                <?php else: ?>
+                    <div class="placeholder-img">صورة العضو</div>
+                <?php endif; ?>
+
                 <h3><?= e($member['name']) ?></h3>
                 <p><?= e($member['position']) ?></p>
             </div>
         <?php endforeach; ?>
     </div>
+
+    <h3 class="sub-section-title" style="
+    margin: 15px 0;" >الإدارة التنفيذية العليا</h3>
+    <div class="cards">
+        <?php foreach ($executiveMembers as $member): ?>
+            <div class="card">
+                <?php if ($member['image']): ?>
+                    <img src="uploads/team/<?= e($member['image']) ?>" alt="">
+                <?php else: ?>
+                    <div class="placeholder-img">صورة العضو</div>
+                <?php endif; ?>
+
+                <h3><?= e($member['name']) ?></h3>
+                <p><?= e($member['position']) ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <div class="card auditor-card">
+        <h3>مدقق الحسابات الخارجي للشركة</h3>
+        <p>شركة سمان وشركاه محاسبون قانونيون ومستشارون ماليون</p>
+    </div>
 </section>
 <section class="section">
     <h2 class="section-title">تواصل معنا</h2>
     <div class="contact-grid">
-        <div class="card">
-            <h3>معلومات التواصل</h3>
-            <p>الإيميل: info@company.com</p>
-            <p>الهاتف: 0790000000</p>
-        </div>
+
+                <div class="card"><h3>معلومات الشركة</h3><p>الإيميل: israatemp@gmail.com</p><p>الهاتف: 065538450</p><p>رقم موبايل: 0777666294</p></div>
+
         <form class="card" action="contact.php" method="POST">
             <input class="form-control" type="text" name="name" placeholder="الاسم" required>
             <input class="form-control" type="email" name="email" placeholder="الإيميل" required>
