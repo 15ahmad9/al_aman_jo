@@ -6,9 +6,28 @@ $announcements = $pdo->query("SELECT * FROM announcements ORDER BY id DESC LIMIT
 $boardMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 'board' ORDER BY id DESC")->fetchAll();
 $executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 'executive' ORDER BY id DESC")->fetchAll();?>
 <section class="hero">
-    <h1>مرحباً بكم في شركتنا</h1>
-    <p>نقدم حلولاً احترافية وخدمات مميزة تساعدكم على تحقيق أهدافكم.</p>
-    <a class="btn" href="contact.php">تواصل معنا</a>
+
+    <div class="hero-slider">
+
+        <img src="assets/images/hero1.jpg" class="slide active">
+        <img src="assets/images/hero2.jpg" class="slide">
+        <img src="assets/images/hero3.jpg" class="slide">
+
+    </div>
+
+    <div class="hero-content">
+        <h1>مرحباً بكم في شركة دار الأمان للإستثمار</h1>
+
+        <p>
+            شركة مساهمة عامة محدودة متخصصة في الاستثمار
+            والتطوير العقاري والخدمات الاستثمارية.
+        </p>
+
+        <a class="btn" href="contact.php">
+            تواصل معنا
+        </a>
+    </div>
+
 </section>
 <section id="about" class="section">
     <h2 class="section-title">عن الشركة</h2>
@@ -120,3 +139,5 @@ $executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 
     </div>
 </section>
 <?php require_once 'includes/footer.php'; ?>
+
+<script src="assets/js/main.js"></script>
