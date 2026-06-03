@@ -23,37 +23,70 @@ require_once 'includes/navbar.php';
 
     <div class="contact-info card">
 
-        <h3>معلومات التواصل</h3>
+        <h3>
+            <i class="fas fa-address-card"></i>
+            معلومات التواصل
+        </h3>
 
         <div class="contact-item">
-            <span>📧</span>
+
+            <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+
             <div>
                 <strong>البريد الإلكتروني</strong>
-                <p>israatemp@gmail.com</p>
+                <p>
+                    <a href="mailto:israatemp@gmail.com">
+                        israatemp@gmail.com
+                    </a>
+                </p>
             </div>
+
         </div>
 
         <div class="contact-item">
-            <span>☎️</span>
+
+            <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+            </div>
+
             <div>
                 <strong>الهاتف</strong>
-                <p>065538450</p>
+                <p>
+                    <a href="tel:065538450">
+                        065538450
+                    </a>
+                </p>
             </div>
+
         </div>
 
         <div class="contact-item">
-            <span>📱</span>
+
+            <div class="contact-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+
             <div>
                 <strong>رقم الموبايل</strong>
-                <p>0777666294</p>
+                <p>
+                    <a href="tel:0777666294">
+                        0777666294
+                    </a>
+                </p>
             </div>
+
         </div>
 
     </div>
 
     <form class="contact-form card" method="POST">
 
-        <h3>أرسل لنا رسالة</h3>
+        <h3>
+            <i class="fas fa-paper-plane"></i>
+            أرسل لنا رسالة
+        </h3>
 
         <input
             class="form-control"
@@ -83,6 +116,7 @@ require_once 'includes/navbar.php';
             required></textarea>
 
         <button class="btn contact-btn">
+            <i class="fas fa-paper-plane"></i>
             إرسال الرسالة
         </button>
 

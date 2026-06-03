@@ -125,42 +125,74 @@ $executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 
 </section>
 <section class="section">
     <h2 class="section-title">تواصل معنا</h2>
-    <div class="contact-grid">
+<div class="contact-grid">
 
     <div class="contact-info card">
 
-        <h3>معلومات التواصل</h3>
+        <h3>
+            <i class="fas fa-address-card"></i>
+            معلومات التواصل
+        </h3>
 
         <div class="contact-item">
-            <span>📧</span>
-            <div>
-                <i class="fa-solid fa-envelope"></i>
-                <strong>البريد الإلكتروني</strong>
-                <p>israatemp@gmail.com</p>
+
+            <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
             </div>
+
+            <div>
+                <strong>البريد الإلكتروني</strong>
+                <p>
+                    <a href="mailto:israatemp@gmail.com">
+                        israatemp@gmail.com
+                    </a>
+                </p>
+            </div>
+
         </div>
 
         <div class="contact-item">
-            <span>📞</span>
+
+            <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+            </div>
+
             <div>
                 <strong>الهاتف</strong>
-                <p>065538450</p>
+                <p>
+                    <a href="tel:065538450">
+                        065538450
+                    </a>
+                </p>
             </div>
+
         </div>
 
         <div class="contact-item">
-            <span>📱</span>
+
+            <div class="contact-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+
             <div>
                 <strong>رقم الموبايل</strong>
-                <p>0777666294</p>
+                <p>
+                    <a href="tel:0777666294">
+                        0777666294
+                    </a>
+                </p>
             </div>
+
         </div>
 
     </div>
 
     <form class="contact-form card" method="POST">
 
-        <h3>أرسل لنا رسالة</h3>
+        <h3>
+            <i class="fas fa-paper-plane"></i>
+            أرسل لنا رسالة
+        </h3>
 
         <input
             class="form-control"
@@ -190,6 +222,7 @@ $executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 
             required></textarea>
 
         <button class="btn contact-btn">
+            <i class="fas fa-paper-plane"></i>
             إرسال الرسالة
         </button>
 
