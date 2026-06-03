@@ -28,6 +28,5 @@ require_once 'navbar-public.php';
         <input class="form-control" type="password" name="password" placeholder="كلمة المرور" required>
         <button class="btn" type="submit">دخول</button>
     </form>
-    <p style="margin-top:15px">Admin: admin@company.com / Admin12345</p>
 </div>
 </body></html>

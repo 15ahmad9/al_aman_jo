@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شركة الأعمال</title>
+      <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+
+    <title>دار الأمان للإستثمار</title>
     <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>

@@ -127,16 +127,75 @@ $executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 
     <h2 class="section-title">تواصل معنا</h2>
     <div class="contact-grid">
 
-                <div class="card"><h3>معلومات الشركة</h3><p>الإيميل: israatemp@gmail.com</p><p>الهاتف: 065538450</p><p>رقم موبايل: 0777666294</p></div>
+    <div class="contact-info card">
 
-        <form class="card" action="contact.php" method="POST">
-            <input class="form-control" type="text" name="name" placeholder="الاسم" required>
-            <input class="form-control" type="email" name="email" placeholder="الإيميل" required>
-            <input class="form-control" type="text" name="phone" placeholder="رقم الهاتف">
-            <textarea class="form-control" name="message" placeholder="رسالتك" rows="5" required></textarea>
-            <button class="btn" type="submit">إرسال</button>
-        </form>
+        <h3>معلومات التواصل</h3>
+
+        <div class="contact-item">
+            <span>📧</span>
+            <div>
+                <i class="fa-solid fa-envelope"></i>
+                <strong>البريد الإلكتروني</strong>
+                <p>israatemp@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <span>📞</span>
+            <div>
+                <strong>الهاتف</strong>
+                <p>065538450</p>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <span>📱</span>
+            <div>
+                <strong>رقم الموبايل</strong>
+                <p>0777666294</p>
+            </div>
+        </div>
+
     </div>
+
+    <form class="contact-form card" method="POST">
+
+        <h3>أرسل لنا رسالة</h3>
+
+        <input
+            class="form-control"
+            type="text"
+            name="name"
+            placeholder="الاسم الكامل"
+            required>
+
+        <input
+            class="form-control"
+            type="email"
+            name="email"
+            placeholder="البريد الإلكتروني"
+            required>
+
+        <input
+            class="form-control"
+            type="text"
+            name="phone"
+            placeholder="رقم الهاتف">
+
+        <textarea
+            class="form-control"
+            name="message"
+            rows="6"
+            placeholder="اكتب رسالتك هنا..."
+            required></textarea>
+
+        <button class="btn contact-btn">
+            إرسال الرسالة
+        </button>
+
+    </form>
+
+</div>
 </section>
 <?php require_once 'includes/footer.php'; ?>
 
