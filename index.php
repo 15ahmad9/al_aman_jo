@@ -86,20 +86,59 @@ $executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 
 
     <h3 class="sub-section-title" style="
     margin: 15px 0;" >أعضاء مجلس الإدارة</h3>
-    <div class="cards">
-        <?php foreach ($boardMembers as $member): ?>
-            <div class="card">
+<!-- الصف الأول -->
+<div class="board-featured">
+
+    <?php foreach ($boardMembers as $member): ?>
+
+        <?php if (
+            $member['name'] === 'الدكتور فاروق محمد مراد مراد' ||
+            $member['name'] === 'الأستاذ محمد أحمد موسى العزب'
+        ): ?>
+
+            <div class="card member-card featured-member">
+
                 <?php if ($member['image']): ?>
                     <img src="uploads/team/<?= e($member['image']) ?>" alt="">
-                <?php else: ?>
-                    <div class="placeholder-img">صورة العضو</div>
                 <?php endif; ?>
 
                 <h3><?= e($member['name']) ?></h3>
                 <p><?= e($member['position']) ?></p>
+
             </div>
-        <?php endforeach; ?>
-    </div>
+
+        <?php endif; ?>
+
+    <?php endforeach; ?>
+
+</div>
+
+<!-- باقي الأعضاء -->
+<div class="cards">
+
+    <?php foreach ($boardMembers as $member): ?>
+
+        <?php if (
+            $member['name'] !== 'الدكتور فاروق محمد مراد مراد' &&
+            $member['name'] !== 'الأستاذ محمد أحمد موسى العزب'
+        ): ?>
+
+            <div class="card member-card">
+
+                <?php if ($member['image']): ?>
+                    <img src="uploads/team/<?= e($member['image']) ?>" alt="">
+                <?php endif; ?>
+
+                <h3><?= e($member['name']) ?></h3>
+                <p><?= e($member['position']) ?></p>
+
+            </div>
+
+        <?php endif; ?>
+
+    <?php endforeach; ?>
+
+</div>
 
     <h3 class="sub-section-title" style="
     margin: 15px 0;" >الإدارة التنفيذية العليا</h3>

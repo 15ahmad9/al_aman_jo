@@ -6,3 +6,5 @@
         <li><a href="../contact.php">تواصل معنا</a></li>
     </ul>
 </nav>
+
+      <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
