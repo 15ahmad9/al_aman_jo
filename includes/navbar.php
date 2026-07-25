@@ -4,9 +4,7 @@
         <img src="assets/images/logo.png" alt="Company Logo">
     </a>
 </div>
-        <div class="menu-toggle" id="menuToggle">
-        ☰
-    </div>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="navLinks">☰</button>
     <ul class="nav-links" id="navLinks">
         <li><a href="index.php">الرئيسية</a></li>
         <li><a href="index.php#about">عن الشركة</a></li>

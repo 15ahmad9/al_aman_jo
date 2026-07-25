@@ -115,8 +115,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`) VALUES
-(1, 'Main Admin', 'admin@alaman.com', '', 'Admin', '2026-05-30 15:22:25'),
-(2, 'Mohammed', 'mohammed@alaman.com', '', 'Editor', '2026-05-30 15:25:34');
+(1, 'Main Admin', 'admin@alaman.com', '$2y$10$3esP9WLl8GQ5/BmtmwydUOaXOT2EllRNTNa1GzvrMoNyNqvyWmcsW', 'Admin', '2026-05-30 15:22:25'),
+(2, 'Mohammed', 'mohammed@alaman.com', '$2y$10$//uiQRPO3q7SUwLnnS9FjekeAxxDyIPf7rK.4y2NJDxcporzVqE7K', 'Editor', '2026-05-30 15:25:34');
 
 --
 -- Indexes for dumped tables

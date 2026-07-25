@@ -29,6 +29,16 @@ $executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 
     </div>
 
 </section>
+
+<!-- <section class="amman-stock-ticker" id="ammanStockTicker">
+    <div class="stock-title">بورصة عمان مباشر</div>
+    <div class="stock-track-wrap">
+        <div class="stock-track" id="stockTrack">
+            <span>جاري تحميل بيانات السوق...</span>
+        </div>
+    </div>
+</section> -->
+
 <section id="about" class="section">
     <h2 class="section-title">عن الشركة</h2>
 
@@ -82,10 +92,10 @@ $executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 
     </div>
 </section>
 <section id="team" class="section">
-    <h2 class="section-title">أعضاء الشركة</h2>
+    <!-- <h2 class="section-title">أعضاء الشركة</h2> -->
 
     <h3 class="sub-section-title" style="
-    margin: 15px 0;" >أعضاء مجلس الإدارة</h3>
+    margin: 15px 0;" > مجلس إدارة الشركة</h3>
 <!-- الصف الأول -->
 <div class="board-featured">
 
@@ -144,7 +154,7 @@ $executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 
     margin: 15px 0;" >الإدارة التنفيذية العليا</h3>
     <div class="cards">
         <?php foreach ($executiveMembers as $member): ?>
-            <div class="card">
+            <div class="card member-card">
                 <?php if ($member['image']): ?>
                     <img src="uploads/team/<?= e($member['image']) ?>" alt="">
                 <?php else: ?>
@@ -158,8 +168,8 @@ $executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 
     </div>
 
     <div class="card auditor-card">
-        <h3>مدقق الحسابات الخارجي للشركة</h3>
-        <p>شركة سمان وشركاه محاسبون قانونيون ومستشارون ماليون</p>
+        <h3>مدقق الحسابات الخارجي</h3>
+        <p>شركة سمان وشركاه محاسبون قانونيون ومستشارون ماليون (BDO)</p>
     </div>
 </section>
 <section class="section">
@@ -199,8 +209,8 @@ $executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 
             <div>
                 <strong>الهاتف</strong>
                 <p>
-                    <a href="tel:065538450">
-                        065538450
+                    <a href="tel:+96265538450">
+                        0096265538450
                     </a>
                 </p>
             </div>
@@ -216,8 +226,8 @@ $executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 
             <div>
                 <strong>رقم الموبايل</strong>
                 <p>
-                    <a href="tel:0777666294">
-                        0777666294
+                    <a href="tel:+962777666294">
+                        00962777666294
                     </a>
                 </p>
             </div>
@@ -270,5 +280,3 @@ $executiveMembers = $pdo->query("SELECT * FROM team_members WHERE member_type = 
 </div>
 </section>
 <?php require_once 'includes/footer.php'; ?>
-
-<script src="assets/js/main.js"></script>

@@ -54,8 +54,8 @@ require_once 'includes/navbar.php';
             <div>
                 <strong>الهاتف</strong>
                 <p>
-                    <a href="tel:065538450">
-                        065538450
+                    <a href="tel:+96265538450">
+                        0096265538450
                     </a>
                 </p>
             </div>
@@ -71,8 +71,8 @@ require_once 'includes/navbar.php';
             <div>
                 <strong>رقم الموبايل</strong>
                 <p>
-                    <a href="tel:0777666294">
-                        0777666294
+                    <a href="tel:+962777666294">
+                        00962777666294
                     </a>
                 </p>
             </div>
