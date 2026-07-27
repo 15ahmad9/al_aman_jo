@@ -4,9 +4,10 @@
     <br>
     <a href="dashboard.php">الرئيسية</a>
     <a href="announcements.php">إدارة الإعلانات</a>
-    <a href="team.php">إدارة الأعضاء</a>
+    
     <a href="messages.php">رسائل التواصل</a>
     <?php if (($_SESSION['role'] ?? '') === 'Admin'): ?>
+<a href="team.php">إدارة الأعضاء</a>
         <a href="users.php">إدارة المستخدمين</a>
     <?php endif; ?>
     <a href="../index.php">عرض الموقع</a>
