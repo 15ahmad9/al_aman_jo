@@ -29,6 +29,26 @@ function uploadImage($file, $targetDir) {
     return null;
 }
 
+
+function uploadAttachment($file, $targetDir) {
+    if (!isset($file) || $file['error'] !== UPLOAD_ERR_OK) return null;
+    $allowed = ['jpg','jpeg','png','gif','webp','pdf'];
+    $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+    if (!in_array($ext, $allowed)) return null;
+    if (!is_dir($targetDir)) mkdir($targetDir,0777,true);
+    // Keep the original uploaded file name
+    $name = basename($file['name']);
+
+    // Remove unsafe characters from the file name while preserving the original name as much as possible
+    $name = preg_replace('/[^A-Za-z0-9._\-\x{0600}-\x{06FF}]+/u', '_', $name);
+
+    // If a file with the same name already exists, replace it
+    $fullPath = rtrim($targetDir,'/').'/'.$name;
+
+    if (move_uploaded_file($file['tmp_name'], $fullPath)) return $name;
+    return null;
+}
+
 function normalizeUrl($url) {
     $url = trim($url ?? '');
     if ($url === '') {

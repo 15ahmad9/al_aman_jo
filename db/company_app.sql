@@ -44,6 +44,15 @@ CREATE TABLE `announcements` (
 INSERT INTO `announcements` (`id`, `title`, `short_description`, `description`, `image`, `created_at`, `link`) VALUES
 (1, 'إطلاق خدمة جديدة', 'الإعلان عن إطلاق خدمة جديدة لعملائنا.', '.', NULL, '2026-05-30 15:22:25', NULL);
 
+-- Attachments for announcements
+CREATE TABLE `announcement_files` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `announcement_id` int(11) NOT NULL,
+  `file_name` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- --------------------------------------------------------
 
 --
